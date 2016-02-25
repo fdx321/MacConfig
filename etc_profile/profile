@@ -1,0 +1,44 @@
+# System-wide .profile for sh(1)
+
+if [ -x /usr/libexec/path_helper ]; then
+	eval `/usr/libexec/path_helper -s`
+fi
+
+if [ "${BASH-no}" != "no" ]; then
+	[ -r /etc/bashrc ] && . /etc/bashrc
+fi
+
+
+alias cd2='cd ../..'
+alias cd3='cd ../../..'
+alias cd4='cd ../../../..'
+alias cd5='cd ../../../../..'
+
+#小点号，表示执行命令,这里的java_home是一个命令，用于输入JAVA_HOME所在的路径
+JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_HOME
+export PATH=/Applications/mongodb-osx-x86_64-3.0.7/bin:/Applications/Sublime\ Text.app/Contents/SharedSupport/bin:/usr/local/bin/npm:/usr/local/bin/node:/Applications/apache-maven-3.2.5/bin:/Applications/apache-ant-1.9.4/bin:/Applications/Homebrew/bin/:/Library/Frameworks/GHC.framework/Versions/7.10.2-x86_64/usr/bin/:/private/var/root/Library/Haskell/bin/:$PATH
+
+NODE_HOME=/usr/local/bin/node
+export NODE_HOME
+
+NPM_HOME=/usr/local/bin/npm
+export NMP_HOME
+
+M2_HOME=/Applications/apache-maven-3.2.5
+export M2_HOME
+
+AXIS2_HOME=/Applications/axis2-1.6.2
+export AXIS2_HOME
+
+JAVA_VERSION=1.8.0_31
+export JAVA_VERSION
+
+ANDROID_HOME=/Users/fdx/Library/android-sdk-macosx
+export ANDROID_HOME
+
+C_INCLUDE_PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/libxml2
+export C_INCLUDE_PATH
+
+PYTHONPATH=$PYTHONPATH:/Library/Python/2.7/site-packages
+export PYTHONPATH
